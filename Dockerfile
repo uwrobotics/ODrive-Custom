@@ -19,7 +19,6 @@ WORKDIR /home
 
 ADD . /home
 
-<<<<<<< HEAD
 RUN cd Firmware \
     && mkdir -p autogen && \
 	python ../tools/odrive/version.py \
@@ -27,8 +26,5 @@ RUN cd Firmware \
 
 RUN cd Firmware \
     && tup init \
-=======
-RUN cd Firmware
->>>>>>> f
     && tup generate build.sh \
     && ./build.sh
