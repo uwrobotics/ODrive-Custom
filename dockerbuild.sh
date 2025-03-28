@@ -17,7 +17,7 @@ function copy {
     cleanup
 
     echo "Generating Build Folder"
-    docker build -t odrive-build-img .
+    docker build --no-cache=true -t odrive-build-img .
 
     echo "Copy Build Folder to Local"
     # Copy files from the container to your host
@@ -29,7 +29,7 @@ function build {
     cleanup
 
     echo "Building the build-environment image"
-    docker build -t odrive-build-img .
+    docker build --no-cache=true -t odrive-build-img .
 
     echo "Build in container"
     docker run -it --name odrive-build-cont odrive-build-img:latest 
